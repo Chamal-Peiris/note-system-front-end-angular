@@ -16,7 +16,10 @@ export class InputComponent implements OnInit {
 
   addNewNote(txtNote: HTMLInputElement) {
     this.noteService.saveNote(new Note(null,txtNote.value,USER_ID)).subscribe({
-      next:value=>
+      next:value=>{
+        txtNote.value='',
+          txtNote.focus();
+      }
     })
     txtNote.value='';
     txtNote.focus();
