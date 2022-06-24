@@ -12,4 +12,9 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addNewNote(txtNote: HTMLInputElement) {
+    console.log(txtNote.value);
+    txtNote.value='';
+    txtNote.focus();
+  }
 }
