@@ -12,4 +12,7 @@ export class NoteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteNote() {
+    console.log('Note deleted');
+  }
 }
