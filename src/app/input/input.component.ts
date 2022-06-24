@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NoteService, USER_ID} from "../service/note.service";
+import {Note} from "../dto/note";
 
 @Component({
   selector: 'app-input',
@@ -7,13 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
+  constructor(private noteService:NoteService) { }
 
   ngOnInit(): void {
   }
 
   addNewNote(txtNote: HTMLInputElement) {
-    console.log(txtNote.value);
+    this.noteService.saveNote(new Note(null,txtNote.value,USER_ID)).subscribe({
+      next:value=>
+    })
     txtNote.value='';
     txtNote.focus();
   }

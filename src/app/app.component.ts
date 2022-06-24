@@ -15,7 +15,9 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.noteService.getAllNotes().subscribe({
-      next:value=>this.notes=value
+      next:value=>{
+        this.notes=value;
+      }
     })
   }
 }
