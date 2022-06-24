@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Note} from "../dto/note";
+import {InputComponent} from "../input/input.component";
 
 @Component({
   selector: 'app-note',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  note!: Note;           //inputs the notes from app component to this
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

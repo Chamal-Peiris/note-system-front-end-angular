@@ -5,8 +5,7 @@
 
 </header>
 <main class="p-4">
-  <app-note></app-note>
-  <app-note></app-note>
-  <app-note></app-note>
+  <app-note *ngFor="let note of notes" [note]="notes"></app-note>
+
 </main>
 
